@@ -20,3 +20,6 @@ class ChallengesInfo(models.Model):
     CategoryDescription = models.TextField(default='',blank=False)
     Challenge1Description=models.TextField(default='',blank=False)
     Challenge2Description=models.TextField(default='',blank=False)
+
+class MachineCreation(models.Model):
+    MachineName=models.CharField(max_length=70, blank=False)

@@ -1,9 +1,11 @@
+from cgi import print_arguments
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
-from HackademyAPI.models import AttackInfo,MachinesInfo,ChallengesInfo
-from HackademyAPI.Serializers import AttackInfoSerializer,MachinesInfoSerializer,ChallengesInfoSerializer
+from HackademyAPI.models import AttackInfo,MachinesInfo,ChallengesInfo,MachineCreation
+from HackademyAPI.Serializers import AttackInfoSerializer,MachinesInfoSerializer,ChallengesInfoSerializer,MachineCreationSerializer
 from django.core.files.storage import default_storage
 from rest_framework import viewsets
 # Create your views here.
@@ -13,13 +15,19 @@ def AttackInfoAPI(request,id=0):
         attackinfo = AttackInfo.objects.all()
         attackinfo_serializer=AttackInfoSerializer(attackinfo,many=True)
         return JsonResponse(attackinfo_serializer.data,safe=False)
-    elif request.method=='POST':
+    elif request.method=='POST':    
+        # if 'AttackTitle' in request.POST:
+        #     AttackTitle = request.POST['AttackTitle']
+        #     print("Yo whatup",AttackTitle)
+        #     return HttpResponse('success') # if everything is OK
+        # return HttpResponse("Unsucccesss0")
         attackinfo_data=JSONParser().parse(request)
         attackinfo_serializer=AttackInfoSerializer(data=attackinfo_data)
         if attackinfo_serializer.is_valid():
             attackinfo_serializer.save()
             return JsonResponse("Added Successfully",safe=False)
         return JsonResponse("Failed to Add",safe=False)
+        
 
 @csrf_exempt
 def MachinesInfoAPI(request,id=1):
@@ -48,4 +56,12 @@ def ChallengesInfoAPI(request,id=2):
             challengesinfo_serializer.save()
             return JsonResponse("Added Successfully",safe=False)
         return JsonResponse("Failed to Add",safe=False)
-
+    
+@csrf_exempt
+def MachineCreationAPI(request, id=3):
+    if request.method=='POST': 
+        if 'MachineName' in request.POST:
+                MachineName = request.POST['MachineName']
+                # print("Yo whatup",MachineName)
+                return HttpResponse('success') # if everything is OK
+        return HttpResponse("Unsucccesss0")

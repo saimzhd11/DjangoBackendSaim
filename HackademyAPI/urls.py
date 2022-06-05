@@ -11,5 +11,7 @@ urlpatterns=[
    re_path(r'^machinesinfo/([0-9]+)$',views.MachinesInfoAPI),
    re_path(r'^challengesinfo$',views.ChallengesInfoAPI),
    re_path(r'^challengesinfo/([0-9]+)$',views.ChallengesInfoAPI),
+    re_path(r'^machinecreation$',views.MachineCreationAPI),
+   re_path(r'^machinecreation/([0-9]+)$',views.MachineCreationAPI),
 
 ]
