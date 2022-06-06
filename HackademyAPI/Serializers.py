@@ -16,4 +16,4 @@ class ChallengesInfoSerializer(serializers.ModelSerializer):
 class MachineCreationSerializer(serializers.ModelSerializer):
     class Meta:
         model=MachineCreation
-        fields=('MachineName')
+        fields=('MachineName','MachineType')

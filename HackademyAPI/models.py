@@ -23,3 +23,4 @@ class ChallengesInfo(models.Model):
 
 class MachineCreation(models.Model):
     MachineName=models.CharField(max_length=70, blank=False)
+    MachineType=models.CharField(max_length=70, blank=False)

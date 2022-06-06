@@ -1,3 +1,2 @@
-from views import AttackInfoAPI
-
-print("CHECKING 1 2 3")
+import views
+print(views.MachineName)
