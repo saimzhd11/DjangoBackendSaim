@@ -1,0 +1,113 @@
+[{
+  "_id": {
+    "$oid": "624c5440b939da0935304c37"
+  },
+  "id": 1,
+  "AttackTitle": "Brute Force Attack",
+  "AttackDescription": "A brute force attack is a trial-and-error method used to obtain information such as a user password or personal identification number (PIN). In a brute force attack, automated software is used to generate a large number of consecutive guesses as to the value of the desired data. Brute force attacks may be used by criminals to crack encrypted data, or by security analysts to test an organization's network security. A brute force attack is also known as brute force cracking or simply brute force"
+},{
+  "_id": {
+    "$oid": "624c5471b939da0935304c38"
+  },
+  "id": 2,
+  "AttackTitle": "COMMAND EXECUTION",
+  "AttackDescription": "Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. Command injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. In this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. Command injection attacks are possible largely due to insufficient input validation."
+},{
+  "_id": {
+    "$oid": "624c5490b939da0935304c39"
+  },
+  "id": 3,
+  "AttackTitle": "Cross-Site Request Forgery (CSRF)",
+  "AttackDescription": "Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant message, or program causes a user’s web browser to perform an unwanted action on a trusted site when the user is authenticated. A CSRF attack works because browser requests automatically include any credentials associated with the site, such as the user’s session cookie, IP address, etc."
+},{
+  "_id": {
+    "$oid": "624c7066e39f05ddf73d06fc"
+  },
+  "id": 4,
+  "AttackTitle": "FILE INCLUSION VULNERABILITY",
+  "AttackDescription": "A file inclusion vulnerability is a type of web vulnerability that is most commonly found to affect web applications that rely on a scripting run time. This issue is caused when an application builds a path to executable code using an attacker-controlled variable in a way that allows the attacker to control which file is executed at run time. A file include vulnerability is distinct from a generic directory traversal attack, in that directory traversal is a way of gaining unauthorized file system access, and a file inclusion vulnerability subverts how an application loads code for execution"
+},{
+  "_id": {
+    "$oid": "624d31067ce12b7fbdc2fb3e"
+  },
+  "id": 5,
+  "AttackTitle": "FILE UPLOAD",
+  "AttackDescription": "A local file upload vulnerability is a vulnerability where an application allows a user to upload a malicious file directly which is then executed. A remote file upload vulnerability is a vulnerability where an application uses user input to fetch a remote file from a site on the Internet and store it locally. This file is then executed by an attacker."
+},{
+  "_id": {
+    "$oid": "624d403e22a8701338e83b9e"
+  },
+  "id": 6,
+  "AttackTitle": "SQL INJECTION",
+  "AttackDescription": "An SQL injection is a computer attack in which malicious code is embedded in a poorly-designed application and then passed to the backend database. The malicious data then produces database query results or actions that should never have been executed.\n"
+},{
+  "_id": {
+    "$oid": "625ee75a088c56a9baa2ca15"
+  },
+  "id": 7,
+  "AttackTitle": "SQL INJECTION ( BLIND )",
+  "AttackDescription": "Blind SQL injection arises when an application is vulnerable to SQL injection, but its HTTP responses do not contain the results of the relevant SQL query or the details of any database errors. With blind SQL injection vulnerabilities, many techniques such as UNION attacks are not effective, because they rely on being able to see the results of the injected query within the application's responses. It is still possible to exploit blind SQL injection to access unauthorized data, but different techniques must be used.."
+},{
+  "_id": {
+    "$oid": "6266b2bcb68bb790951123da"
+  },
+  "id": 9,
+  "AttackTitle": "XSS DOM",
+  "AttackDescription": "DOM XSS stands for Document Object Model-based Cross-site Scripting. A DOM-based XSS attack is possible if the web application writes data to the Document Object Model without proper sanitization. The attacker can manipulate this data to include XSS content on the web page, for example, malicious JavaScript code."
+},{
+  "_id": {
+    "$oid": "628376e75f10d15bef5a5b98"
+  },
+  "id": 10,
+  "AttackTitle": "XSS REFLECTED",
+  "AttackDescription": "A reflected XSS (or also called a non-persistent XSS attack) is a specific type of XSS whose malicious script bounces off of another website to the victim’s browser. It is passed in the query, typically, in the URL. It makes exploitation as easy as tricking a user to click on a link. Compared to stored XSS, non-persistent XSS only require the malicious script to be added to a link and that a user clicks on it."
+},{
+  "_id": {
+    "$oid": "6283774b5f10d15bef5a5b99"
+  },
+  "id": 11,
+  "AttackTitle": "XSS STORED",
+  "AttackDescription": "A loStored attacksretrieves the malicious script from the server when it requests the stored information. Stored XSS is also sometimes referred to as Persistent or Type-I XSS"
+},{
+  "_id": {
+    "$oid": "628377565f10d15bef5a5b9a"
+  },
+  "id": 12,
+  "AttackTitle": "BUFFER OVERFLOW",
+  "AttackDescription": "A buffer overflow condition exists when a program attempts to put more data in a buffer than it can hold or when a program attempts to put data in a memory area past a buffer. In this case, a buffer is a sequential section of memory allocated to contain anything from a character string to an array of integers. Writing outside the bounds of a block of allocated memory can corrupt data, crash the program, or cause the execution of malicious code."
+},{
+  "_id": {
+    "$oid": "6283775a5f10d15bef5a5b9b"
+  },
+  "id": 13,
+  "AttackTitle": "PRIVILAGED ESCALATION",
+  "AttackDescription": "Privilege escalation happens when a malicious user of an account or application gains access to the privileges of another user account in the target system. The attacker can then use the newly gained privileges to steal confidential data, run administrative commands or deploy malware and potentially do serious damage to your operating system, server applications, organization, and reputation. In this blog post, we will look at typical privilege escalation scenarios and learn how you can protect user accounts in your systems and applications to maintain a good security posture."
+},{
+  "_id": {
+    "$oid": "628cc581b30fb78ecb0257aa"
+  },
+  "id": 16,
+  "AttackTitle": "Demo Attack Title",
+  "AttackDescription": "jgfkdshfsdfh"
+},{
+  "_id": {
+    "$oid": "629c7d60ffe989cbb447d607"
+  },
+  "id": 17,
+  "AttackTitle": "attack title checking",
+  "AttackDescription": "attttttttttttttttttttttttttttt"
+},{
+  "_id": {
+    "$oid": "629c7d756c1bd10f4fde8536"
+  },
+  "id": 18,
+  "AttackTitle": "attack title checking",
+  "AttackDescription": "attttttttttttttttttttttttttttt"
+},{
+  "_id": {
+    "$oid": "629c8552dee98193c86dddc3"
+  },
+  "id": 19,
+  "AttackTitle": "sadasd",
+  "AttackDescription": "sssss"
+}]

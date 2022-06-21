@@ -65,9 +65,9 @@ def ChallengesInfoAPI(request,id=2):
 ET.register_namespace("","http://www.github/cliffe/SecGen/scenario")
 ET.register_namespace("","http://www.w3.org/2001/XMLSchema-instance")
 ET.register_namespace("","http://www.github/cliffe/SecGen/scenario")
-pathM = 'sudo ruby secgen.rb -s scenarios/examples/vulnerability_examples/insecure_web_applications/commando/'
+pathM = 'sudo ruby secgen.rb -s scenarios/examples/vulnerability_examples/'
 newfile = ("Updated.xml")
-tree = ET.parse('HackademyAPI\impossible.xml')
+tree = ET.parse('HackademyAPI/dirtycow.xml')
 root = tree.getroot()
 
 
@@ -103,29 +103,42 @@ def MachineCreationAPI(request, id=3):
       
 
     print("Hello world",MachineName, MachineType,CreationDate,ExpiryDate,MachineDescription,Vulnerability,Difficulty,Encoders,Network,Service,webapp,generator,datastore)
-        
+         
     
     for x in root.findall(".//{http://www.github/cliffe/SecGen/scenario}vulnerability"):
         x.attrib['module_path']=f'{Vulnerability}'
-    tree.write(newfile)
+        print(x.attrib)
+    
 
     for x in root.findall(".//{http://www.github/cliffe/SecGen/scenario}difficulty"):
         x.text = f'{Difficulty}'
         print(x.text)
-    tree.write(newfile)
+    
 
     for x in tree.findall(".//{http://www.github/cliffe/SecGen/scenario}encoder"):
         x.attrib['name'] = f'{Encoders}'
-    tree.write(newfile)
+        print(x.attrib)
+    
 
     for x in tree.findall(".//{http://www.github/cliffe/SecGen/scenario}network"):
         x.attrib['type'] = f'{Network}'  
-    tree.write(newfile)
+        print(x.attrib)
+    
 
     for x in root.findall(".//{http://www.github/cliffe/SecGen/scenario}type"):
         x.text = f'{MachineType}'
+        print(x.text)
+    
     tree.write(newfile)
 
+    os.chdir("/home/wasi/SecGen")
+    time.sleep(2)
+    # os.chdir("/SecGen")
+    # time.sleep(2)
+    os.system(pathM+"dirtycow.xml run") 
 
 
     return HttpResponse("Not POST")
+
+    if __name__ == '__main__':
+        app.run(host="192.168.252.128")
