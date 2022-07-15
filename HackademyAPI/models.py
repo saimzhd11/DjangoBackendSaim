@@ -1,9 +1,22 @@
+
 from django.db import models
 
 # Create your models here.
 class AttackInfo(models.Model):
     AttackTitle=models.CharField(max_length=70, blank=False)
     AttackDescription = models.TextField(default='',blank=False)
+
+class UserInfo(models.Model):
+    FirstName=models.CharField(max_length=70, blank=False)
+    LastName=models.CharField(max_length=70, blank=False)
+    HomeAddress = models.TextField(default='',blank=False)
+    City=models.CharField(max_length=70, blank=False)
+    Country=models.CharField(max_length=70, blank=False)
+    PostalCode= models.IntegerField()
+    UserDescription = models.TextField(default='',blank=False)
+
+
+
 
 class MachinesInfo(models.Model):
     MachineNumber= models.IntegerField()

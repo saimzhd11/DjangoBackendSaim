@@ -11,7 +11,7 @@
 			<value>172.16.0.12</value>
 		</input>
 
-		<network type="private_network_1">
+		<network type="public_network_1">
 			<input into="IP_address">
 				<datastore access="0">IP_addresses</datastore>
 			</input>

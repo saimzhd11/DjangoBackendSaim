@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
-from HackademyAPI.models import AttackInfo,MachinesInfo,ChallengesInfo,MachineCreation
-from HackademyAPI.Serializers import AttackInfoSerializer,MachinesInfoSerializer,ChallengesInfoSerializer,MachineCreationSerializer
+from HackademyAPI.models import AttackInfo,MachinesInfo,ChallengesInfo,MachineCreation,UserInfo
+from HackademyAPI.Serializers import AttackInfoSerializer,MachinesInfoSerializer,ChallengesInfoSerializer,MachineCreationSerializer, UserInfoSerializer,UserInfoSerializer
 from django.core.files.storage import default_storage
 from rest_framework import viewsets
 import os
@@ -16,6 +16,9 @@ import sys
 import xml.etree.ElementTree as ET
 # from termcolor import colored
 # Create your views here.
+
+
+
 @csrf_exempt
 def AttackInfoAPI(request,id=0):
     if request.method=='GET':   
@@ -29,7 +32,24 @@ def AttackInfoAPI(request,id=0):
             attackinfo_serializer.save()
             return JsonResponse("Added Successfully",safe=False)
         return JsonResponse("Failed to Add",safe=False)
-        
+
+@csrf_exempt     
+def UserInfoAPI(request,id=4):
+    if request.method=='GET':   
+        userinfo = UserInfo.objects.all()
+        userinfo_serializer=UserInfoSerializer(userinfo,many=True)
+        return JsonResponse(userinfo_serializer.data,safe=False)
+    elif request.method=='POST':    
+        userinfo_data=JSONParser().parse(request)
+        userinfo_serializer=UserInfoSerializer(data=userinfo_data)
+        if userinfo_serializer.is_valid():
+            userinfo_serializer.save()
+            return JsonResponse("Added Successfully",safe=False)
+        return JsonResponse("Failed to Add",safe=False)
+
+
+
+
 
 @csrf_exempt
 def MachinesInfoAPI(request,id=1):
@@ -129,7 +149,7 @@ def MachineCreationAPI(request, id=3):
         x.text = f'{MachineType}'
         print(x.text)
     
-    tree.write(newfile)
+    tree.write('HackademyAPI/dirtycow.xml')
 
     os.chdir("/home/wasi/SecGen")
     time.sleep(2)

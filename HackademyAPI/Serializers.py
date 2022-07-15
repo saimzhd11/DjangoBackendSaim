@@ -1,10 +1,15 @@
 from rest_framework import serializers
-from HackademyAPI.models import AttackInfo,MachinesInfo,ChallengesInfo,MachineCreation
+from HackademyAPI.models import AttackInfo,MachinesInfo,ChallengesInfo,MachineCreation,UserInfo
+
 
 class AttackInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model=AttackInfo
         fields=('AttackTitle','AttackDescription')
+class UserInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=UserInfo
+        fields=('FirstName','LastName','HomeAddress','City','Country','PostalCode','UserDescription')
 class MachinesInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model=MachinesInfo
